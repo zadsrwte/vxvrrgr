@@ -1,0 +1,202 @@
+---
+---
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap')
+
+// variables
+$main-color: #10b981
+$secondary-color: #c5fff4
+$dark-color: #27272a
+
+html
+    scroll-behavior: smooth
+
+body 
+    font-family: 'Quicksand', sans-serif
+    transition: all .7s
+
+a
+    &, &:visited
+        color: $main-color
+    &:hover
+        text-decoration: none
+    &:visited:hover:not(.site-title)
+        color: #111
+
+h1
+    font-size: 2rem
+
+h2
+    margin-top: 1rem
+  
+hr
+    background-color: #ccc
+    height: 1px
+    border: 0
+
+.emoji-button
+    border: none
+    background: white
+    border-radius: 8px
+    box-shadow: #bbb 2px 2px 5px
+    padding: 8px
+    margin-right: 10px
+
+.post-header
+    display: none
+
+#awesome-resources-
+    display: none
+
+
+.scroll-up
+    position: fixed
+    bottom: 8%
+    right: 6%
+    opacity: 1
+    width: 35px
+    height: 35px
+    z-index: 10
+    cursor: pointer
+    background-color: $main-color
+    outline: none
+    display: none
+    border: none
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2))
+    border-radius: 50px
+
+.footer-col-wrapper
+    display: flex
+    flex-direction: row
+
+.footer-col
+    float: none
+    flex: 1
+
+.site-header
+    border: 0
+    background-color: $main-color
+    width: 100%
+    position: -webkit-sticky /* Safari */
+    position: sticky
+    top: 0
+    .site-title
+        font-weight: 500
+        color: #ffffff
+        &:hover
+            text-decoration: none
+    .page-link
+        color: #ffffff
+
+footer
+    border-top: 0 !important
+    .social-media-list
+        li
+            display: inline-block
+            &:not(:last-child)
+                margin-right: 15px
+            .svg-icon
+                transform: scale(1.5)
+                fill: $main-color
+
+.nav-wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.nav-actions
+    display: flex
+    justify-content: center
+    align-items: center
+    .github-link
+        font-size: 2rem
+        transition: all .2s
+        margin-right: 10px
+        &:hover
+            color: $secondary-color !important
+    // toggle button style
+    .theme-control
+        display: flex
+        justify-content: center
+        align-items: center
+        .theme-toggler
+            cursor: pointer
+            color: #ffff
+            font-size: 1.5rem
+            transition: .5s
+            &:hover
+                color: $secondary-color
+        .toggle
+            position: relative
+            display: inline-block
+            width: 3em
+            height: 1em
+            margin: auto .8em
+            input
+                opacity: 0
+                width: 0
+                height: 0
+                &:checked + .slider
+                    background-color: $main-color
+                    &:before
+                        -webkit-transform: translateX(2em)
+                        -ms-transform: translateX(2em)
+                        transform: translateX(2em)
+                &:focus + .slider
+                    box-shadow: 0 0 .1em $main-color
+            .slider
+                position: absolute
+                cursor: pointer
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                background-color: #f0ecec
+                -webkit-transition: .4s
+                transition: .4s
+                &:before
+                    position: absolute
+                    content: ""
+                    height: 1em
+                    width: 1em
+                    background-color: #fdfdfd
+                    box-shadow: .5px .5px .5em .5px #b6b5b5
+                    -webkit-transition: .4s
+                    transition: .4s
+            .round
+                border-radius: 2em
+                &:before
+                    border-radius: 50%
+
+.wrapper
+    &:after
+        content: none !important
+
+hr
+    & + p
+        margin-top: 10px
+
+body:not(.dark)
+    .scroll-up
+        color: #fff
+    footer
+        background-color: #f9f9f9
+
+body.dark
+    background-color: $dark-color
+    color: #fff
+    a:hover:not(.site-title)
+        color: #fff
+    footer
+        background-color: #52525b
+        .footer-col-wrapper
+            color: #fff !important
+    .scroll-up
+        color: $dark-color
+
+// rules when the burger menu is shown
+@media screen and (max-width: 600px)
+.site-nav
+    background-color: $main-color
+    border: none
+    text-align: left
